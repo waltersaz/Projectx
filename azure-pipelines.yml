@@ -21,12 +21,17 @@ steps:
     targetPath: 'D:\a\1\s\Projectx\obj\Release'
     artifact: 'projectX'
     publishLocation: 'pipeline'
-
+- task: DownloadBuildArtifacts@1
+  inputs:
+    buildType: 'current'
+    downloadType: 'single'
+    artifactName: 'projectX'
+    downloadPath: '$(System.ArtifactsDirectory)'
 - task: AzureRmWebAppDeployment@4
   inputs:
     ConnectionType: 'AzureRM'
     azureSubscription: 'MyWebApp'
     appType: 'webApp'
     WebAppName: 'walter-webap'
-    packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
+    packageForLinux: '$(System.ArtifactsDirectory)/**/*.zip'
 
