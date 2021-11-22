@@ -18,7 +18,7 @@ steps:
 
 - task: PublishPipelineArtifact@1
   inputs:
-    targetPath: 'D:\a\1\s\Projectx\obj\Release'
+    targetPath: 'D:\a\1\s\Projectx\'
     artifact: 'projectX'
     publishLocation: 'pipeline'
 - task: DownloadBuildArtifacts@1
