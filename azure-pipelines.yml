@@ -15,3 +15,6 @@ steps:
     configuration: 'Release'
     restoreNugetPackages: true
     msbuildArchitecture: 'x64'
+
+- publish: '**\Release'
+      artifact: drop
