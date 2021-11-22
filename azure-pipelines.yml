@@ -34,5 +34,6 @@ steps:
     azureSubscription: 'MyWebApp'
     appType: 'webApp'
     WebAppName: 'walter-webap'
-    packageForLinux: '$(System.ArtifactsDirectory)/Projectx'
+    packageForLinux: 'D:\a\1\s\Projectx\obj\Release\'
+
 
