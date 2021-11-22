@@ -15,17 +15,16 @@ steps:
     configuration: 'Release'
     restoreNugetPackages: true
     msbuildArchitecture: 'x64'
-
-- task: PublishPipelineArtifact@1
+- task: PublishBuildArtifacts@1
   inputs:
-    targetPath: 'D:\a\1\s\Projectx\'
-    artifact: 'projectX'
-    publishLocation: 'pipeline'
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'projectx'
+    publishLocation: 'Container'
 - task: DownloadBuildArtifacts@1
   inputs:
     buildType: 'current'
     downloadType: 'single'
-    artifactName: 'projectX'
+    artifactName: 'projectx'
     downloadPath: '$(System.ArtifactsDirectory)'
 
 - task: AzureRmWebAppDeployment@4
@@ -34,6 +33,6 @@ steps:
     azureSubscription: 'MyWebApp'
     appType: 'webApp'
     WebAppName: 'walter-webap'
-    packageForLinux: 'D:\a\1\s\Projectx\obj\Release\'
+    packageForLinux: '$(System.ArtifactsDirectory)\**\*.zip'
 
 
