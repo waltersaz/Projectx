@@ -27,6 +27,10 @@ steps:
     downloadType: 'single'
     artifactName: 'projectX'
     downloadPath: '$(System.ArtifactsDirectory)'
+
+- task: PowerShell@2
+  inputs:
+    filePath: 'ls $(System.ArtifactsDirectory)'    
 - task: AzureRmWebAppDeployment@4
   inputs:
     ConnectionType: 'AzureRM'
