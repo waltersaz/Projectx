@@ -5,7 +5,7 @@ pool:
   vmImage: windows-latest
 
 variables:
-  buildConfiguration: '
+  buildConfiguration: 'Release'
 
 steps:
 - task: VSBuild@1
@@ -15,6 +15,5 @@ steps:
     configuration: 'Release'
     restoreNugetPackages: true
     msbuildArchitecture: 'x64''
-
 
 
