@@ -1,7 +1,8 @@
 trigger:
 - '*'
 
-pool: Microsoft-hosted
+pool:
+  vmImage: windows
 
 variables:
   buildConfiguration: 'Release'
