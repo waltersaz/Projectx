@@ -16,5 +16,8 @@ steps:
     restoreNugetPackages: true
     msbuildArchitecture: 'x64'
 
-- publish: '**\Release'
-  artifact: drop
+- task: PublishPipelineArtifact@1
+  inputs:
+    targetPath: '$(Pipeline.Workspace)/obj/Release'
+    artifact: 'projectX'
+    publishLocation: 'pipeline'
