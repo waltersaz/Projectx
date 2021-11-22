@@ -18,6 +18,6 @@ steps:
 
 - task: PublishPipelineArtifact@1
   inputs:
-    targetPath: '$(Pipeline.Workspace)/obj/Release'
+    targetPath: '$(Pipeline.Workspace)/**/obj/Release'
     artifact: 'projectX'
     publishLocation: 'pipeline'
