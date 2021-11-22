@@ -18,7 +18,7 @@ steps:
 
 - task: PublishPipelineArtifact@1
   inputs:
-    targetPath: '$(Pipeline.DefaultWorkingDirectory)/Projectx/bin/obj/Release'
+    targetPath: 'D:\a\1\s\Projectx\obj\Release'
     artifact: 'projectX'
     publishLocation: 'pipeline'
 
