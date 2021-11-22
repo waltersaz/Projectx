@@ -28,14 +28,11 @@ steps:
     artifactName: 'projectX'
     downloadPath: '$(System.ArtifactsDirectory)'
 
-- task: PowerShell@2
-  inputs:
-    filePath: 'ls'    
 - task: AzureRmWebAppDeployment@4
   inputs:
     ConnectionType: 'AzureRM'
     azureSubscription: 'MyWebApp'
     appType: 'webApp'
     WebAppName: 'walter-webap'
-    packageForLinux: '$(System.ArtifactsDirectory)/**/*.zip'
+    packageForLinux: '$(System.ArtifactsDirectory)/Projectx'
 
