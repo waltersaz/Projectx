@@ -5,12 +5,16 @@ pool:
   vmImage: windows-latest
 
 variables:
-  buildConfiguration: 'Release'
+  buildConfiguration: '
 
 steps:
-- task: DotNetCoreCLI@2
+- task: VSBuild@1
   inputs:
-    command: 'build'
-    projects: '*.sln'
+    solution: '**\*.sln'
+    vsVersion: '16.0'
+    configuration: 'Release'
+    restoreNugetPackages: true
+    msbuildArchitecture: 'x64''
+
 
 
