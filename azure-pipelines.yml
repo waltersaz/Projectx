@@ -33,5 +33,5 @@ steps:
     azureSubscription: 'MyWebApp'
     appType: 'webApp'
     WebAppName: 'walter-webap'
-    packageForLinux: '$(System.ArtifactsDirectory)'
+    packageForLinux: '$(System.ArtifactsDirectory)/**/*.zip'
 
