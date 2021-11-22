@@ -17,4 +17,4 @@ steps:
     msbuildArchitecture: 'x64'
 
 - publish: '**\Release'
-      artifact: drop
+  artifact: drop
