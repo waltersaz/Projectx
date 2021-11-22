@@ -1,7 +1,7 @@
 trigger:
 - '*'
 
-pool: Azure Pipelines
+pool: Microsoft-hosted
 
 variables:
   buildConfiguration: 'Release'
